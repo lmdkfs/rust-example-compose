@@ -1,0 +1,15 @@
+version: "3"
+services:
+  build-mdbook:
+    image: rust:latest 
+    #command: ["mdbook", "serve", "-n", "0.0.0.0", "-p", "3000"]
+    command: ["cargo", "install", "mdbook", "--root", "/data/"]
+
+    ports: 
+      - "3000:3000"
+    restart: always
+    volumes:
+      - "./rust-by-example-cn:/data/rust-by-example-cn"
+      - "./bin:/data/bin"
+
+
