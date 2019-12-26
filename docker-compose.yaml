@@ -1,0 +1,12 @@
+version: "3"
+services:
+  rust-by-example:
+    build:
+      context: .
+    image: registry.cn-beijing.aliyuncs.com/rust/rust-by-example-cn:2019-12-26
+    command: ["mdbook", "serve", "-n", "0.0.0.0", "-p", "3000"]
+    ports: 
+      - "3000:3000"
+    restart: always
+
+
